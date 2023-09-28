@@ -1,0 +1,11 @@
+*  TranscriptDesigner2 instantiates   +1
+*  TranscriptDesigner2 initiates   +1
+*  TranscriptDesigner2 runs   +1
+!!! Unable to run myosin
+!!! Unable to run determinacy test -5
+*  Ran without Exception on 20 E. coli proteins  +1
+!!! Protein doesn't match translation: 0
+MSKEHTTEHLRAELKSLSDTLEEVLSSSGEKSKEELSKIRSKAEQALKQSRYRLGETGDAIAKQTRVAAARADEYVRENPWTGVGIGAAIGVVLGVLLSRR
+!!! CDS doesn't begin with start codon for: 0
+MSKEHTTEHLRAELKSLSDTLEEVLSSSGEKSKEELSKIRSKAEQALKQSRYRLGETGDAIAKQTRVAAARADEYVRENPWTGVGIGAAIGVVLGVLLSRR
+!!!  Exception encountered.  Score: -1.0
