@@ -1,5 +1,7 @@
 package org.ucb.c5.composition;
 
+import org.ucb.c5.composition.checkers.GCContentChecker;
+import org.ucb.c5.composition.checkers.HairpinChecker;
 import org.ucb.c5.composition.model.RBSOption;
 import org.ucb.c5.composition.model.Transcript;
 import org.ucb.c5.sequtils.HairpinCounter;
@@ -18,6 +20,8 @@ public class TranscriptDesigner2 {
     private RBSChooser rbsChooser;
 
     private HairpinCounter hairpinCounter;
+    private HairpinChecker hairpinChecker;
+    private GCContentChecker gcContentChecker;
 
     public void initiate() throws Exception {
         //Initialize the RBSChooser
@@ -27,6 +31,12 @@ public class TranscriptDesigner2 {
         //Initialize hairpin chooser
         hairpinCounter = new HairpinCounter();
         hairpinCounter.initiate();
+
+        hairpinChecker = new HairpinChecker();
+        hairpinChecker.initiate();
+
+        gcContentChecker = new GCContentChecker();
+        gcContentChecker.initiate(30.0, 70.0);
         
         //Construct a map between each amino acid and the highest-CAI codon for E coli
         aminoAcidToCodon = new HashMap<>();
@@ -99,6 +109,16 @@ public class TranscriptDesigner2 {
         StringBuilder cds = new StringBuilder();
         for(String codon : finalCodons) {
             cds.append(codon);
+        }
+
+        // Check for secondary structures
+        if(!hairpinChecker.run(cds.toString())) {
+            throw new Exception("The sequence has unwanted secondary structures.");
+        }
+
+// Check for optimal GC content
+        if(!gcContentChecker.run(cds.toString())) {
+            throw new Exception("The sequence's GC content is outside the desired bounds.");
         }
         RBSOption selectedRBS = rbsChooser.run(cds.toString(), ignores);
 
