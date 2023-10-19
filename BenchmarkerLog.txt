@@ -1,11 +1,15 @@
 *  TranscriptDesigner2 instantiates   +1
 *  TranscriptDesigner2 initiates   +1
 *  TranscriptDesigner2 runs   +1
-!!! Unable to run myosin
-!!! Unable to run determinacy test -5
 *  Ran without Exception on 20 E. coli proteins  +1
-!!! Protein doesn't match translation: 0
-MSKEHTTEHLRAELKSLSDTLEEVLSSSGEKSKEELSKIRSKAEQALKQSRYRLGETGDAIAKQTRVAAARADEYVRENPWTGVGIGAAIGVVLGVLLSRR
-!!! CDS doesn't begin with start codon for: 0
-MSKEHTTEHLRAELKSLSDTLEEVLSSSGEKSKEELSKIRSKAEQALKQSRYRLGETGDAIAKQTRVAAARADEYVRENPWTGVGIGAAIGVVLGVLLSRR
-!!!  Exception encountered.  Score: -1.0
+*  All 20 E. coli proteins return non-null  +2
+*  All 20 designed CDS translate correctly  +5
+*  All 20 designed CDS have start and stop  +5
+*  Algorithm generates no forbidden sequences   +5
+*  Algorithm generates no forbidden sequences for all 20   +5
+*  Algorithm generates fewer hairpins for 20 sequences   +10.0
+*  This many codons were used: 61
+*  Algorithm has an acceptable run time   +2
+*  Algorithm handled a 20 protein composition
+*  20 protein construct has no forbidden sequences   +2
+*  Benchmarker completed.  Score: 40.0
